@@ -1,6 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'oauth2'
+
+CLIENT_ID = "1deb83d75262db1af441f6847402480c595d2a1e70af01b0cd3d8f27d177a87e"
+CLIENT_SECRET = "3acd0bed383b37263fc367ab0efd7da20f33daba895accdf446e90c139aa8d47"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line

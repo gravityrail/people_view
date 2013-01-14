@@ -1,4 +1,7 @@
 NbuildApiConsumer::Application.routes.draw do
+  root to: "pages#index"
+  get "/callback", to: "oauth#callback"
+  resources :people
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

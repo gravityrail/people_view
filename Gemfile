@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+gem 'oauth2'
+gem 'pry'
+gem 'will_paginate'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
