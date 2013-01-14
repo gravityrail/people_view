@@ -1,1 +1,5 @@
 <%= render :partial => "person", collection: @people %>
+<p>
+  <%= link_to "< Previous", people_path(page: @current_page - 1) if @current_page > 1 %> |
+  <%= link_to "Next >", people_path(page: @current_page + 1) %>
+</p>

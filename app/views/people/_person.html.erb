@@ -1,1 +1,5 @@
-<p><%= person.inspect %></p>
+<div class="person short">
+  <p> Email: <%= person.email %> </p>
+  <p> Name: <%= person.name %> </p>
+  <p><%= link_to "edit", edit_person_path(person) %></p>
+</div>
