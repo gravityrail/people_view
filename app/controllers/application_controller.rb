@@ -22,6 +22,11 @@ class ApplicationController < ActionController::Base
     session[:token_string]
   end
 
+  helper_method :logged_in?
+  def logged_in?
+    token_string.present?
+  end
+
   def code
     session[:code]
   end

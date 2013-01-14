@@ -12,6 +12,9 @@ class PeopleController < ApplicationController
   def update
     set_person(params[:id], params[:person])
     redirect_to edit_person_path(:id => params[:id])
+  rescue OAuth2::Error => e
+    flash[:error] = "There was an error"
+    redirect_to edit_person_path(:id => params[:id])
   end
 
   private

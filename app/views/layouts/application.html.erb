@@ -7,6 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <%= link_to "NB Client", root_path, class: "brand" %>
+      <ul class="nav">
+        <%= content_for "top_nav" %>
+      </ul>
+    </div>
+  </div>
+
+  <% flash.each do |type, message| %>
+    <%= content_tag :div, class: "alert alert-#{type}" do %>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= message %>
+    <% end %>
+  <% end %>
+
+
 
 <%= yield %>
 

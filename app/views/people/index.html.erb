@@ -1,4 +1,12 @@
-<%= render :partial => "person", collection: @people %>
+<%= currently_at :people %>
+<table class="table table-striped">
+  <tr>
+    <th>Email</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  <%= render :partial => "person", collection: @people %>
+</table>
 <p>
   <%= link_to "< Previous", people_path(page: @current_page - 1) if @current_page > 1 %> |
   <%= link_to "Next >", people_path(page: @current_page + 1) %>

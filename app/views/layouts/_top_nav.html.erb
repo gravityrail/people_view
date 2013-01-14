@@ -1,0 +1,5 @@
+<% if logged_in? %>
+  <%= nav_link "People", people_path, name: :people %>
+<% end %>
+
+<%= nav_link "About", about_path, name: :about %>
