@@ -11,6 +11,7 @@ class PeopleController < ApplicationController
 
   def update
     set_person(params[:id], params[:person])
+    flash[:success] = "Updated person successfully"
     redirect_to edit_person_path(:id => params[:id])
   rescue OAuth2::Error => e
     flash[:error] = "There was an error"
