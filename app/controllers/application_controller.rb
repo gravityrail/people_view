@@ -2,6 +2,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   private
+
+  rescue_from OAuth2::Error, :with => :reset_token
+
+  def reset_token(error)
+    if error.response.status == 401
+      session[:token_string] = nil
+      session[:code] = nil
+      redirect_to root_path
+    else
+      raise error
+    end
+  end
+
   def client
     OAuth2::Client.new(CLIENT_ID, CLIENT_SECRET, :site => site_path)
   end
@@ -15,7 +28,6 @@ class ApplicationController < ActionController::Base
       session[:token_string] = token.token
     end
     @token
-    #token.get("/api/v1/people", :headers => { "Accept" => "application/json", "Content-Type" => "application/json" })
   end
 
   def token_string
@@ -42,5 +54,9 @@ class ApplicationController < ActionController::Base
   def redirect_uri
     # "http://localhost:3000/callback"
     callback_url
+  end
+
+  def standard_headers
+    { "Accept" => "application/json", "Content-Type" => "application/json" }
   end
 end

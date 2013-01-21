@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   def index
     @current_page = (params[:page] || 1).to_i
-    response = token.get("/api/v1/people", :headers => { "Accept" => "application/json" }, :params => { page: @current_page })
+    response = token.get("/api/v1/people", :headers => standard_headers, :params => { page: @current_page })
     @people = JSON.parse(response.body)["people"].map { |person_data| Person.from_hash(person_data) }
   end
 
@@ -21,17 +21,14 @@ class PeopleController < ApplicationController
   private
 
   def get_person(id)
-    response = token.get("/api/v1/people/#{id}", :headers => { "Accept" => "application/json" })
+    response = token.get("/api/v1/people/#{id}", :headers => standard_headers)
     hash = JSON.parse(response.body)["person"]
     Person.from_hash(hash)
   end
 
   def set_person(id, attributes)
     options = {
-      :headers => {
-        "Accept" => "application/json",
-        "Content-Type" => "application/json"
-      },
+      :headers => standard_headers,
       :body => {
         person: attributes
       }.to_json
