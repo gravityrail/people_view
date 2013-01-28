@@ -14,7 +14,18 @@ class PeopleController < ApplicationController
     flash[:success] = "Updated person successfully"
     redirect_to edit_person_path(:id => params[:id])
   rescue OAuth2::Error => e
-    flash[:error] = "There was an error"
+    if e.response.parsed["code"] == "validation_failed"
+      errors = e.response.parsed["validation_errors"]
+      errors.each do |attr, failures|
+        failures.each do |failure|
+          "#{attr} is #{failure}"
+        end
+      end
+      flash[:error] = array.join(" and ")
+    else
+      flash[:error] = "There was an error"
+    end
+
     redirect_to edit_person_path(:id => params[:id])
   end
 

@@ -4,7 +4,7 @@ gem 'rails', '3.2.11'
 gem 'oauth2'
 gem 'pry'
 gem 'will_paginate'
-gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
+gem 'twitter-bootstrap-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

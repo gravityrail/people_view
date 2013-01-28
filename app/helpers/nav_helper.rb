@@ -6,7 +6,7 @@ module NavHelper
     end
   end
 
-  def nav_link(name, destination, options)
+  def nav_link(name, destination, options = {})
     link_name = options.delete(:name)
     active_link_name = @active
 

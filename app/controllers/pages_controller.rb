@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @auth_path = client.auth_code.authorize_url(:redirect_uri => redirect_uri)
+    redirect_to people_path if logged_in?
   end
 
   def about

@@ -1,2 +1,15 @@
 <%= currently_at :home %>
-<p>click <%= link_to "here", @auth_path %> to authorize us to use your nation</p>
+
+<%= form_tag authorize_path, :class=>"foo" do %>
+  <%= content_tag :fieldset do %>
+    <%= content_tag :legend, "Authorize to Nation" %>
+
+    <%= content_tag :div, :class=> "control-group" do %>
+    <%= content_tag :div, :class=> "controls" do %>
+    <%= text_field_tag 'nation[slug]', nil, :class=>"input-block-level", :placeholder => "Nation Slug" %>
+    <% end %>
+    <% end %>
+
+    <%= submit_tag "Authorize", :class=> "btn btn-primary btn-block" %>
+  <% end %>
+<% end %>

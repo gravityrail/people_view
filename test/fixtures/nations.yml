@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  slug: MyString
+  client_uid: MyString
+  secret_key: MyString
+
+two:
+  slug: MyString
+  client_uid: MyString
+  secret_key: MyString

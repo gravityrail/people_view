@@ -5,6 +5,8 @@ require 'oauth2'
 
 CLIENT_ID = "a1e80421e0dd8eabf349e563ecdb4d4f3c39e1b2023876fbd65e0e9bdb7bc8f4"
 CLIENT_SECRET = "3671b252493005e6a9a93c909a2e99bcc5983949e77117f7bfb0cdf4a428ac13"
+#CLIENT_ID = "dfbb7df7cd37e841b6fe111bcd67a7c7ff2f70baab322415dc9f97dca5710212"
+#CLIENT_SECRET = "757231334bd92f502cbd3a48dd45652f675d8ed7aa39cec542ea938183b103d8"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
