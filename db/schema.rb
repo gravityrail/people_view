@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128234945) do
+ActiveRecord::Schema.define(:version => 20130129014701) do
 
   create_table "credentials", :force => true do |t|
     t.integer  "nation_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20130128234945) do
   create_table "questions", :force => true do |t|
     t.integer  "survey_id"
     t.string   "prompt"
-    t.string   "type"
+    t.string   "kind"
     t.string   "slug"
     t.string   "status"
     t.datetime "created_at", :null => false

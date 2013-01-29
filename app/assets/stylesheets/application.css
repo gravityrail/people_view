@@ -17,3 +17,7 @@
 body {
   padding-top: 50px;
 }
+
+table th.actions, table td.actions {
+  text-align: right;
+}

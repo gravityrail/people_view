@@ -2,17 +2,21 @@
 
 <table class="table table-striped">
   <tr>
-    <th>Name</th>
-    <th></th>
+    <th>Survey</th>
+    <th>Questions</th>
+    <th>Created At</th>
+    <th class="actions"></th>
   </tr>
 
 <% @surveys.each do |survey| %>
   <tr>
     <td><%= survey.name %></td>
-    <td>
-      <%= link_to 'Show', survey %> |
-      <%= link_to 'Edit', edit_survey_path(survey) %> |
-      <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <td><%= survey.questions.count %></td>
+    <td><%=l survey.created_at %></td>
+    <td class="actions">
+      <%= link_to 'Show', survey, class: 'btn btn-primary' %>
+      <%= link_to 'Edit', edit_survey_path(survey), class: 'btn' %>
+      <%= link_to 'Destroy', survey, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
     </td>
   </tr>
 <% end %>
