@@ -5,6 +5,8 @@ NbuildApiConsumer::Application.routes.draw do
   get "/deauthorize", to: "oauth#deauthorize"
 
   get "/about", to: "pages#about"
+  get "/api_console", to: "pages#api_console"
+  post "/api_request", to: "pages#api_request"
 
   resources :surveys do
     member do

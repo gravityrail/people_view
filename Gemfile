@@ -44,3 +44,4 @@ gem "formtastic-plus-bootstrap"
 
 # To use debugger
 # gem 'debugger'
+gem "coderay"

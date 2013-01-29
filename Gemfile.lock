@@ -140,6 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 2.0.3)
+  coderay
   coffee-rails (~> 3.2.1)
   formtastic (~> 2.1)
   formtastic-plus-bootstrap

@@ -1,0 +1,30 @@
+<%= currently_at :api_console %>
+
+<%= form_tag api_request_path do %>
+  <fieldset>
+    <legend>API Test</legend>
+    <p>
+      <select name="api[action]">
+        <option value="get">GET</option>
+        <option value="post">POST</option>
+        <option value="put">PUT</option>
+        <option value="delete">DELETE</option>
+      </select>
+      <%= text_field_tag "api[path]" %>
+    </p>
+
+    <p>
+      <textarea name="api[body]"></textarea>
+    </p>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+<% end %>
+
+
+<% if @code %>
+  <div class="response">
+    <%= @code.html_safe %>
+  </div>
+<% end -%>
+

@@ -21,3 +21,7 @@ body {
 table th.actions, table td.actions {
   text-align: right;
 }
+
+.CodeRay {
+  width: 100%;
+}
