@@ -1,11 +1,20 @@
+<%= currently_at :surveys %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @survey.title %>
+  <b>Name:</b>
+  <%= @survey.name %>
 </p>
-<%= render @survey.questions %>
+<p>
+  <b>Slug:</b>
+  <%= @survey.slug %>
+</p>
+<p>
+  <b>Site:</b>
+  <%= @survey.site_slug %>
+</p>
 
+<%= render @survey.questions %>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
