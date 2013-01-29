@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   has_many :possible_responses
   accepts_nested_attributes_for :possible_responses, allow_destroy: true
 
-  validates_presences_of :survey, :prompt, :type, :slug, :status
+  validates_presence_of :survey, :prompt, :type, :slug, :status
   validates_inclusion_of :status, in: Survey::STATUSES
 
 end
