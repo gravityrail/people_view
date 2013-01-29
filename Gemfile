@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'oauth2'
 gem 'pry'
+gem 'pry-remote'
 gem 'will_paginate'
 gem 'twitter-bootstrap-rails'
 
