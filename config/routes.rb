@@ -5,6 +5,13 @@ NbuildApiConsumer::Application.routes.draw do
   get "/deauthorize", to: "oauth#deauthorize"
 
   get "/about", to: "pages#about"
+
+  resources :surveys do
+    member do
+      get :export
+    end
+  end
+
   resources :people
   # The priority is based upon order of creation:
   # first created -> highest priority.

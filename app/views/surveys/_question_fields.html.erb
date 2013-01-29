@@ -1,0 +1,10 @@
+<%= f.inputs 'Question' do %>
+  <%= f.input :prompt %>
+  <%= f.input :_destroy, :as => :boolean %>
+
+  <%= f.semantic_fields_for :possible_responses, 'Choices' do |builder| %>
+    <%= render 'possible_response_fields', f: builder %>
+  <% end %>
+
+  <%= link_to_add_fields "Add Answer", f, :possible_responses %>
+<% end %>

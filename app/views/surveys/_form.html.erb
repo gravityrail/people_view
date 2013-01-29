@@ -1,0 +1,17 @@
+<%= semantic_form_for @survey do |f| %>
+  <%= f.inputs 'Survey Options' do %>
+    <%= f.input :name %>
+    <%= f.input :slug %>
+    <%= f.input :site_slug %>
+    <%= f.input :status, :as => :select, :collection => Survey::STATUSES %>
+  <% end %>
+
+    <%= f.semantic_fields_for :questions, "Questions" do |builder| %>
+      <%= render 'question_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Add Question", f, :questions %>
+
+  <%= f.actions %>
+<% end %>
+
+

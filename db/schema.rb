@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128220914) do
+ActiveRecord::Schema.define(:version => 20130128234945) do
 
   create_table "credentials", :force => true do |t|
     t.integer  "nation_id"
@@ -26,6 +26,38 @@ ActiveRecord::Schema.define(:version => 20130128220914) do
     t.string   "secret_key"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "possible_responses", :force => true do |t|
+    t.integer  "question_id"
+    t.string   "name"
+    t.string   "feedback"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "possible_responses", ["question_id"], :name => "index_possible_responses_on_question_id"
+
+  create_table "questions", :force => true do |t|
+    t.integer  "survey_id"
+    t.string   "prompt"
+    t.string   "type"
+    t.string   "slug"
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "questions", ["survey_id"], :name => "index_questions_on_survey_id"
+
+  create_table "surveys", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "site_slug"
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "nation_id"
   end
 
 end

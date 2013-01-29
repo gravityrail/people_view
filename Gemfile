@@ -25,6 +25,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "bootstrap-sass", "~> 2.0.3"
+gem "formtastic", "~> 2.1"
+gem "formtastic-plus-bootstrap"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
