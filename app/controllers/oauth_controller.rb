@@ -14,9 +14,7 @@ class OauthController < ApplicationController
   end
 
   def deauthorize
-    credential.destroy if credential
-    session[:current_nation] = nil
-    session[:credential_id] = nil
+    deauthorize!
     redirect_to root_path
   end
 

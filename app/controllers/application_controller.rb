@@ -10,10 +10,15 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def deauthorize!
+    credential.destroy if credential
+    session[:current_nation] = nil
+    session[:credential_id] = nil
+  end
+
   def reset_token(error)
     if error.response.status == 401
-      session[:token_string] = nil
-      session[:code] = nil
+      deauthorize!
       redirect_to root_path
     else
       raise error
