@@ -1,35 +1,15 @@
 class SurveyExporter
-  attr_reader :survey
-  def initialize(survey)
+  attr_reader :survey, :token
+  def initialize(survey, token)
     @survey = survey
+    @token = token
   end
 
   def export
-    export_survey
+    token.post("/api/v1/surveys", body: parameters.to_json, headers: json_headers)
   end
 
   private
-
-  def export_survey
-    connection.post("/api/v1/surveys", body: parameters.to_json, headers: json_headers)
-  end
-
-  def token
-    @token ||= OAuth2::AccessToken.new(client, token_string)
-  end
-  alias_method :connection, :token
-
-  def token_string
-    "50315e143c49315a7016a82e94fc8d25e6c074e4aeef0f678c83d15879f08535"
-  end
-
-  def client
-    OAuth2::Client.new(CLIENT_ID, CLIENT_SECRET, :site => site_path)
-  end
-
-  def site_path
-    "http://3dna.nbuild.local:3001"
-  end
 
   def parameters
     {
@@ -55,10 +35,10 @@ module NationBuilder
 
     def to_hash
       {
-        status: "published",
-        name: survey.title,
-        slug: "external_survey_#{survey.to_param}",
-        site_slug: "3dna",
+        status: survey.status,
+        name: survey.name,
+        slug: survey.slug,
+        site_slug: survey.site_slug,
         questions: survey.questions.map { |question| QuestionPresenter.new(question).to_hash }
       }
     end
@@ -72,10 +52,10 @@ module NationBuilder
 
     def to_hash
       {
-        type: "multiple",
-        status: "published",
-        slug: "external_question_#{question.to_param}",
-        prompt: question.content,
+        type: question.kind,
+        status: question.status,
+        slug: question.slug,
+        prompt: question.prompt,
         choices: possible_responses_hash
       }
     end
@@ -93,7 +73,8 @@ module NationBuilder
 
     def to_hash
       {
-        name: possible_response.content
+        name: possible_response.content,
+        feedback: possible_response.feedback
       }
       # feedback string in this hash if wanted
     end
