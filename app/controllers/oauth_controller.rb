@@ -7,6 +7,7 @@ class OauthController < ApplicationController
   end
 
   def authorize
+    deauthorize!
     set_current_nation
     redirect_to client.auth_code.authorize_url(
       :redirect_uri => callback_url
@@ -25,10 +26,10 @@ class OauthController < ApplicationController
   end
 
   def set_current_nation
-    session[:current_nation] = params[:nation][:slug]
+    session[:current_nation] = params[:nation_id]
   end
 
   def current_nation
-    @current_nation ||= Nation.where(slug: session[:current_nation]).first
+    @current_nation ||= Nation.where(id: session[:current_nation]).first
   end
 end

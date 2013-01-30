@@ -1,0 +1,16 @@
+<li class="span3">
+  <a href= "<%= authorize_path(nation_id: nation.id) %>" class="thumbnail">
+    <div class="logo-image" style="background-image: url(<%= nation.logo.url %>);">
+    </div>
+    <h3><%= nation.name %></h3>
+  </a>
+
+  <div class="actions">
+    <%= link_to "edit", edit_nation_path(nation), class: "pull-left" %>
+
+    <%= link_to nation_path(nation), class: "pull-right", method: :delete, confirm: "Are you sure?" do %>
+      <i class="icon-remove-sign"></i>
+    <% end -%>
+  </div>
+
+</li>

@@ -1,27 +1,27 @@
 <%= currently_at :api_console %>
 
 <%= form_tag api_request_path do %>
+  <%= hidden_field_tag "api[body]", @body %>
   <fieldset>
     <legend>API Test</legend>
     <p>
-      <select name="api[action]">
-        <option value="get">GET</option>
-        <option value="post">POST</option>
-        <option value="put">PUT</option>
-        <option value="delete">DELETE</option>
-      </select>
-      <%= text_field_tag "api[path]" %>
-    </p>
-
-    <p>
-      <textarea name="api[body]"></textarea>
+      <%= select 'api', 'action', ['GET', 'POST', 'PUT', 'DELETE'], { selected: @method }, {class: "span2"} %>
+      <%= text_field_tag "api[path]", @path, :class => "span10 pull-right" %>
     </p>
   </fieldset>
 
-  <button type="submit">Submit</button>
+  <div class="editor-container">
+    <div id="editor"></div>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block ">Submit</button>
 <% end %>
 
-
+<% if @status %>
+  <div class="status">
+    <%= @status %>
+  </div>
+<% end -%>
 <% if @code %>
   <div class="response">
     <%= @code.html_safe %>

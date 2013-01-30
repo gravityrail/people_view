@@ -45,3 +45,5 @@ gem "formtastic-plus-bootstrap"
 # To use debugger
 # gem 'debugger'
 gem "coderay"
+gem "carrierwave"
+gem 'ace-rails-ap', :git => "git://github.com/codykrieger/ace-rails-ap.git"

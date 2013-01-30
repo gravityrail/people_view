@@ -6,7 +6,7 @@ class Question < ActiveRecord::Base
   has_many :possible_responses
   accepts_nested_attributes_for :possible_responses, allow_destroy: true
 
-  validates_presence_of :survey, :prompt, :kind, :slug, :status
+  validates_presence_of :prompt, :kind, :slug, :status
   validates_inclusion_of :status, in: Survey::STATUSES
   validates_inclusion_of :kind, in: KINDS.map(&:last)
 

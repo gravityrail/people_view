@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130129014701) do
+ActiveRecord::Schema.define(:version => 20130129234715) do
 
   create_table "credentials", :force => true do |t|
     t.integer  "nation_id"
@@ -21,11 +21,13 @@ ActiveRecord::Schema.define(:version => 20130129014701) do
   end
 
   create_table "nations", :force => true do |t|
-    t.string   "slug"
     t.string   "client_uid"
     t.string   "secret_key"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "url"
+    t.string   "logo"
   end
 
   create_table "possible_responses", :force => true do |t|

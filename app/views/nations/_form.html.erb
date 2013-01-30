@@ -1,0 +1,5 @@
+<%= semantic_form_for @nation do |f| %>
+  <%= f.inputs :name, :url, :client_uid, :secret_key %>
+  <%= f.input :logo, as: :file %>
+  <%= f.actions %>
+<% end -%>

@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require ace/ace
+//= require ace/theme-solarized_light
+//= require ace/mode-json
 //= require_tree .

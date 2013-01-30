@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require 'oauth2'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
 
 CLIENT_ID = "a1e80421e0dd8eabf349e563ecdb4d4f3c39e1b2023876fbd65e0e9bdb7bc8f4"
 CLIENT_SECRET = "3671b252493005e6a9a93c909a2e99bcc5983949e77117f7bfb0cdf4a428ac13"

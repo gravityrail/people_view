@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/codykrieger/ace-rails-ap.git
+  revision: 337ca0b34a0ed2e92cbeb3175506049cc4a683fb
+  specs:
+    ace-rails-ap (2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -31,6 +37,9 @@ GEM
     arel (3.0.2)
     bootstrap-sass (2.0.4.2)
     builder (3.0.4)
+    carrierwave (0.7.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -139,7 +148,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ace-rails-ap!
   bootstrap-sass (~> 2.0.3)
+  carrierwave
   coderay
   coffee-rails (~> 3.2.1)
   formtastic (~> 2.1)

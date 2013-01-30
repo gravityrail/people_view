@@ -15,11 +15,12 @@
           <%= content_for "top_nav" %>
         </ul>
 
-        <% if logged_in? %>
-          <ul class="nav pull-right">
-            <%= nav_link "Logout", deauthorize_path %>
-          </ul>
-        <% end %>
+        <ul class="nav pull-right">
+          <%= nav_link "New Nation", new_nation_path, :name => :new_nation %>
+          <% if logged_in? %>
+            <%= nav_link "Logout", deauthorize_path, :name => :logout %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

@@ -1,13 +1,14 @@
 NbuildApiConsumer::Application.routes.draw do
-  root to: "pages#index"
+  root to: "nations#index"
   get "/callback", to: "oauth#callback"
-  post "/authorize", to: "oauth#authorize"
+  get "/authorize", to: "oauth#authorize"
   get "/deauthorize", to: "oauth#deauthorize"
 
   get "/about", to: "pages#about"
-  get "/api_console", to: "pages#api_console"
+  get "/api_request", to: "pages#api_console"
   post "/api_request", to: "pages#api_request"
 
+  resources :nations
   resources :surveys do
     member do
       get :export
