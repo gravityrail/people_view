@@ -37,6 +37,11 @@ class ApplicationController < ActionController::Base
     @credential ||= Credential.find_by_id(session[:credential_id])
   end
 
+  helper_method :nation
+  def nation
+    credential.nation
+  end
+
   def standard_headers
     { "Accept" => "application/json", "Content-Type" => "application/json" }
   end
