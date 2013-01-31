@@ -73,7 +73,7 @@ module NationBuilder
 
     def to_hash
       {
-        name: possible_response.content,
+        name: possible_response.name,
         feedback: possible_response.feedback
       }
       # feedback string in this hash if wanted
