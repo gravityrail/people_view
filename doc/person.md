@@ -1,35 +1,35 @@
 # Person Resource
 
-## List
+## Retreive a list of People
 
-This endpoint returns a list of people resource.
+### HTTP Method
 
-### URL
+`GET`
 
-`GET /api/v1/people`
+### HTTP URI
+
+`/api/v1/people`
 
 ### Params
 
 * `page` - The page number, defaults to 0
 * `per_page` - Number of entries to display, defaults to 10
 
-### Example
-
-#### Request
+### Example Request
 
 ```
 GET /api/v1/people?page=3&per_page=2
 ```
 
-#### Request Body
+### Request Body
 
 None
 
-#### Response Status
+### Response Status
 
 `200`
 
-#### Response Body
+### Response Body
 
 ```json
 {
@@ -58,24 +58,23 @@ None
 }
 ```
 
+## Create a new person
 
-## Creation
+### HTTP Method
 
-Create a new person
+`POST`
 
-### URL
+### HTTP URI
 
-`POST /api/v1/people`
+`/api/v1/people`
 
-### Example
-
-#### Request
+### Example Request
 
 ```
 POST /api/v1/people
 ```
 
-#### Request Body
+### Request Body
 
 ```json
 {
@@ -89,37 +88,37 @@ POST /api/v1/people
 }
 ```
 
-#### Response Status
+### Response Status
 
 `201`
 
-#### Response Header
+### Response Header
 
 `Location: /api/v1/people/123`
 
 The response header contains the location of the created resource.
 
-#### Response Body
+### Response Body
 
 none
 
-## Updates
+## Update a person
 
-Update information regardng a person with specified id.
+### HTTP Method
 
-### URL
+`PUT`
 
-`PUT /api/v1/people/<id>`
+### HTTP URI
 
-### Example
+`/api/v1/people/<id>`
 
-#### Request
+### Example Request
 
 ```
 PUT /api/v1/people/1234
 ```
 
-#### Request Body
+### Request Body
 
 ```json
 {
@@ -141,26 +140,26 @@ PUT /api/v1/people/1234
 
 none
 
-## Deleting
+## Delete an existing person
 
-Deletes a person with specified id.
+### HTTP Method
 
-### URL
+`DELETE`
 
-`DELETE /api/v1/people/<id>`
+### HTTP URI
 
-### Example
+`/api/v1/people/<id>`
 
-#### Request
+### Example Request
 
 ```
 DELETE /api/v1/people/1234
 ```
 
-#### Response Status
+### Response Status
 
 `200`
 
-#### Response Body
+### Response Body
 
 none
