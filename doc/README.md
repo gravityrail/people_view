@@ -15,11 +15,12 @@ To start, you will need to create a new OAuth Application in your nation's contr
 
 ## Authentication
 
-NationBuilder API uses [OAuth 2](http://oauth.net/2/). In order to access the
-API, you will need to create a new OAuth Application in your nation's control
+NationBuilder API's authentication system build around
+[Version 22 of The OAuth 2.0 Authorization Protocol](http://tools.ietf.org/html/draft-ietf-oauth-v2-22).
+In order to access the API, you will need to create a new OAuth Application in your nation's control
 panel. Once you have done this, you will receive a Consumer Key and a Consumer Secret.
 
-Below is a list of OAuth 2 Authorization Endpoints provided by NationBuilder API:
+Listed below is the OAuth 2 authorize and token urls provided by NationBuilder API:
 
 **Authorize URL**
 
@@ -32,6 +33,11 @@ https://<nation_slug>.nationbuilder.com/oauth/authorize
 ```
 https://<nation_slug>.nationbuilder.com/oauth/token
 ```
+
+NationBuilder API is known to work with the following clients:
+
+* `oauth2` ruby gem
+
 
 
 ## Endpoints
