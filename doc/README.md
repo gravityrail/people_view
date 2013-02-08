@@ -30,7 +30,7 @@ https://<nation_slug>.nationbuilder.com/oauth/token
 
 NationBuilder API is known to work with the following clients:
 
-* `oauth2` ruby gem
+* [oauth2](https://rubygems.org/gems/oauth2) ruby gem
 
 
 
