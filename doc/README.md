@@ -50,5 +50,5 @@ All endpoints are relative to the following url:
 
 ## Available Resources and Endpoints
 
-*[Person](https://github.com/3dna/people_view/blob/master/doc/person.md)
-*[Survey](https://github.com/3dna/people_view/blob/master/doc/survey.md)
+* [Person](https://github.com/3dna/people_view/blob/master/doc/person.md)
+* [Survey](https://github.com/3dna/people_view/blob/master/doc/survey.md)
