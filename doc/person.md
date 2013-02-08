@@ -158,7 +158,7 @@ DELETE /api/v1/people/1234
 
 ### Response Status
 
-`200`
+`204`
 
 ### Response Body
 

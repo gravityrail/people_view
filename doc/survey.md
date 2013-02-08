@@ -253,7 +253,7 @@ DELETE /api/v1/survey/1234
 
 ### Response Status
 
-`200`
+`204`
 
 ### Response Body
 
