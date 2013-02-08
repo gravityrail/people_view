@@ -1,6 +1,6 @@
 # Survey Resource
 
-## Retreive a list of Available Surveys
+## Retreive a list of available Surveys
 
 ### HTTP Method
 
@@ -198,15 +198,19 @@ PUT /api/v1/survey/1234
       "type": "multiple",
       "status": "published",
       "choices": [{
+        "id": "1",
         "name": "Daily mail service to all homes. Yeah right....",
         "feedback": "really now...?"
       }, {
+        "id": "2",
         "name": "Opposition to any change in our naturalization laws",
         "feedback": null
       }, {
+        "id": "3",
         "name": "foobar",
         "feedback": "foobar"
       }, {
+        "id": "4",
         "name": "Kansas should be admitted as a state",
         "feedback": null
       }]
