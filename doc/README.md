@@ -53,8 +53,8 @@ All endpoints are relative to the following url:
 `https://<nation_slug>.nationbuilder.com`
 
 
+### [Person Resource](https://github.com/3dna/people_view/blob/master/doc/person.md)
 
-
-### Survey
+### [Survey Resource](https://github.com/3dna/people_view/blob/master/doc/survey.md)
 
 
